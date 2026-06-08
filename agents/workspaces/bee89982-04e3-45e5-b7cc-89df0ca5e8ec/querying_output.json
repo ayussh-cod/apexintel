@@ -1,0 +1,65 @@
+{
+  "field": "competitive programming",
+  "performers": [
+    {
+      "name": "Gennady Korotkevich",
+      "strategy_urls": [
+        "https://codeforces.com/blog/entry/130349",
+        "https://en.wikipedia.org/wiki/Gennady_Korotkevich",
+        "https://www.youtube.com/watch?v=3MGKWUZFMac",
+        "https://www.redgreencode.com/cpfaq-how-did-x-become-a-top-competitive-programmer-part-2",
+        "https://www.youtube.com/watch?v=o_Ahgu1-zj4",
+        "https://cphof.org/profile/topcoder:tourist",
+        "https://www.linkedin.com/posts/abhisheksainikgp_people-who-hate-on-competitive-programming-activity-7235884343624155136-QnMQ"
+      ]
+    },
+    {
+      "name": "Makoto Soejima",
+      "strategy_urls": [
+        "https://en.wikipedia.org/wiki/Makoto_Soejima",
+        "https://iq.opengenus.org/makoto-soejima",
+        "https://codeforces.com/blog/entry/79034",
+        "https://www.freecodecamp.org/news/the-most-popular-coding-challenge-websites",
+        "https://github.com/lnishan/awesome-competitive-programming",
+        "https://ii.uni.wroc.pl/media/uploads/2021/12/06/bartosz-kostka.pdf",
+        "https://medium.com/@gargkhushi872/coding-contests-3adafdc3c130"
+      ]
+    },
+    {
+      "name": "Tiancheng Lou",
+      "strategy_urls": [
+        "https://arxiv.org/pdf/2502.06807",
+        "https://joaogui1.github.io/2018/07/31/comp-practice.html",
+        "https://cphof.org/profile/topcoder:ACRush",
+        "https://kr-asia.com/inside-pony-ais-staying-power-and-the-mindset-of-its-cto-lou-tiancheng",
+        "https://baike.baidu.com/en/item/Lou%20Tiancheng/650939",
+        "https://www.linkedin.com/posts/pony-ai_deemed-by-the-chinese-programming-community-activity-6489255314003681280--UfO",
+        "https://chinai.substack.com/p/chinai-239-tiancheng-lou-chinas-no"
+      ]
+    },
+    {
+      "name": "Andrew He",
+      "strategy_urls": [
+        "https://grokipedia.com/page/Andrew_He",
+        "https://cphof.org/profile/topcoder:ecnerwal",
+        "https://en.wikipedia.org/wiki/Andrew_He",
+        "https://www.cecs.ucf.edu/NAC-NAPC/2022-trainers",
+        "https://codeforces.com/blog/entry/81358",
+        "https://corecursive.com/065-competitive-coding-with-conor-hoekstra",
+        "https://www.linkedin.com/posts/andrewyng_deepseek-r1-uncensored-qwq-32b-puts-reasoning-activity-7305984835708141570-XVKU"
+      ]
+    },
+    {
+      "name": "Kamil Debowski",
+      "strategy_urls": [
+        "https://www.youtube.com/watch?v=IsEPi_c0Y2A",
+        "https://harbour.space/faculty/Kamil-Debowski",
+        "https://www.youtube.com/c/Errichto/about",
+        "https://www.youtube.com/watch?v=LjpXTpMPPDA",
+        "https://cphof.org/profile/topcoder:Errichto",
+        "https://www.merlot.org/merlot/viewMaterial.htm?id=773404590",
+        "https://usaco.guide/general/intro-cp"
+      ]
+    }
+  ]
+}

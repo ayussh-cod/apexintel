@@ -1,0 +1,65 @@
+{
+  "field": "venture capital",
+  "performers": [
+    {
+      "name": "Alfred Lin",
+      "strategy_urls": [
+        "https://fs.blog/knowledge-project-podcast/alfred-lin",
+        "https://www.vcsheet.com/who/alfred-lin",
+        "https://www.forbes.com/sites/josipamajic/2026/03/17/sequoias-alfred-lin-says-venture-capital-should-think-bigger-as-nvidia-hits-5-trillion",
+        "https://www.forbes.com/profile/alfred-lin",
+        "https://www.antoinebuteau.com/lessons-from-alfred-lin",
+        "https://sequoiacap.com/people/alfred-lin",
+        "https://www.sourcery.vc/p/part-ii-alfred-lin-sequoia"
+      ]
+    },
+    {
+      "name": "Reid Hoffman",
+      "strategy_urls": [
+        "https://www.linkedin.com/posts/reidhoffman_the-future-of-venture-capital-is-not-only-activity-7364301280678199296-1ijC",
+        "https://en.wikipedia.org/wiki/Reid_Hoffman",
+        "https://www.hustlefund.vc/post/reid-hoffman-investments-the-network-effects-master-who-built-linkedin-and-backed-facebook",
+        "https://medium.com/vcdium/five-reid-hoffman-strategies-for-scaling-a-business-7bacdc78a05f",
+        "https://www.nfx.com/post/the-great-reset-reid-hoffman",
+        "https://www.ebsco.com/research-starters/biography/reid-hoffman",
+        "https://greylock.com/team/reid-hoffman"
+      ]
+    },
+    {
+      "name": "Peter Thiel",
+      "strategy_urls": [
+        "https://www.startupbell.net/post/peter-thiel-s-strategy-for-startup-success",
+        "https://www.alexanderjarvis.com/nine-critical-lessons-from-peter-thiel",
+        "https://www.instagram.com/reel/DRbYb8mABtU?hl=en",
+        "https://www.speakersassociates.com/speaker/peter-thiel",
+        "https://www.hustlefund.vc/post/angel-squad-peter-thiel-investments-the-contrarian-framework-behind-one-of-ventures-greatest-track-records",
+        "https://www.forbes.com/profile/peter-thiel",
+        "https://foundersfund.com/team/peter-thiel"
+      ]
+    },
+    {
+      "name": "Neil Shen",
+      "strategy_urls": [
+        "https://www.hsgcap.com/article/neil-shen-beyond-expo-2024",
+        "https://www.forbes.com/profile/neil-shen",
+        "https://www.linkedin.com/posts/hktenzin_venturecapital-neilshen-hongshan-activity-7366229207820992512-Rtas",
+        "https://www.scribd.com/document/594721006/3",
+        "https://www.gic.com.sg/event-speakers/neil-shen",
+        "https://www.ft.com/content/1d288c2f-215a-4661-aa1a-273671b945cd?syn-25a6b1a6=1",
+        "https://www.sps.tsinghua.edu.cn/spsen/info/1051/1088.htm"
+      ]
+    },
+    {
+      "name": "Micky Malka",
+      "strategy_urls": [
+        "https://endeavor.org/stories/the-future-of-fintech",
+        "https://www.antoinebuteau.com/lessons-from-micky-malka-founder-of-ribbit-capital",
+        "https://insights4vc.substack.com/p/what-ribbit-sees-before-everyone",
+        "https://hcsanfrancisco.clubs.harvard.edu/article.html?aid=1342",
+        "https://www.vcsheet.com/who/micky-malka",
+        "https://en.wikipedia.org/wiki/Ribbit_Capital",
+        "https://www.upgrade.com/board/meyer-micky-malka"
+      ]
+    }
+  ]
+}

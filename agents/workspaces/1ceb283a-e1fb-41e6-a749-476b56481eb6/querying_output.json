@@ -1,0 +1,65 @@
+{
+  "field": "trading",
+  "performers": [
+    {
+      "name": "Jim Simons",
+      "strategy_urls": [
+        "https://www.luxalgo.com/blog/simons-strategies-renaissance-trading-unpacked",
+        "https://www.quantvps.com/blog/jim-simons-trading-strategy",
+        "https://www.edgeful.com/blog/posts/jim-simons-trading-strategy-systematic-approach",
+        "https://trendspider.com/learning-center/whats-known-about-jim-simons-and-renaissance-technologies-strategies",
+        "https://www.scribd.com/document/773587416/Jim-Simons-Strategy",
+        "https://www.acquired.fm/episodes/renaissance-technologies",
+        "https://www.youtube.com/watch?v=lji-jNsXmAM"
+      ]
+    },
+    {
+      "name": "George Soros",
+      "strategy_urls": [
+        "https://hedgefundalpha.com/strategies/george-soros-portfolio",
+        "https://www.investopedia.com/articles/investing/090815/3-best-investments-george-soros-ever-made.asp",
+        "https://elitecurrensea.com/blog/stocks/how-to-apply-the-theory-of-reflexivity-by-george-soros-in-currency-trading",
+        "https://financhill.com/blog/investing/how-did-george-soros-make-his-money",
+        "https://www.ii.co.uk/analysis-commentary/how-invest-best-how-george-soros-rewrote-rulebook-ii538414",
+        "https://www.colibritrader.com/reflexivity-theory-soros",
+        "https://www.investopedia.com/articles/financial-theory/09/how-soros-does-it.asp"
+      ]
+    },
+    {
+      "name": "Paul Tudor Jones",
+      "strategy_urls": [
+        "https://macro-ops.com/lessons-from-a-trading-great-paul-tudor-jones-ptj",
+        "https://25iq.com/2015/07/25/a-dozen-things-ive-learned-from-paul-tudor-jones-about-investing-and-trading",
+        "https://pictureperfectportfolios.com/how-to-invest-like-paul-tudor-jones-contrarian-macro-trader",
+        "https://www.linkedin.com/posts/sjosephburns_paul-tudor-jones-22-trading-principles-activity-7390330591319085057-M1_q",
+        "https://www.luxalgo.com/blog/paul-tudor-jones-iconic-trading-methods",
+        "https://trendspider.com/learning-center/whats-known-about-paul-tudor-jones-strategies",
+        "https://stockcircle.com/portfolio/tudor-investment"
+      ]
+    },
+    {
+      "name": "Larry R. Williams",
+      "strategy_urls": [
+        "https://www.altrady.com/blog/crypto-trading-strategies/larry-williams-trading-strategy-techniques",
+        "https://ftp.arcchurches.com/index.jsp/mLC1ED/605992/Larry%20Williams%20Trader%20Books.pdf",
+        "https://pictureperfectportfolios.com/how-to-invest-like-larry-williams-trading-strategies-and-systems",
+        "https://roguequant.substack.com/p/i-backtested-larry-williams-trading",
+        "https://emini-watch.com/trading-psychology/trading-with-larry-williams",
+        "https://www.financialwisdomtv.com/post/larry-williams-trading-strategy-3-key-methods-for-huge-profits",
+        "https://www.ireallytrade.com"
+      ]
+    },
+    {
+      "name": "Jesse Livermore",
+      "strategy_urls": [
+        "https://tradingcenter.org/index.php/learn/trading-tips/330-jesse-livermore",
+        "https://ftp.arcchurches.com/Download_PDFS/mL97B0/604650/How%20To%20Trade%20In%20Stocks%20Jesse%20Livermore.pdf",
+        "https://ftp.arcchurches.com/default.aspx/mL97B0/604650/How%20To%20Trade%20In%20Stocks%20Jesse%20Livermore.pdf",
+        "http://www.r-5.org/files/books/trading/speculation/Richard_Smitten-Trade_Like_Jesse_Livermore-EN.pdf",
+        "https://www.shortform.com/books/blog/jesse-livermore-trading-strategy.html",
+        "https://www.antoinebuteau.com/lessons-from-jesse-livermore",
+        "https://tradethatswing.com/swing-trading-lessons-from-how-to-trade-in-stocks-by-jesse-livermore"
+      ]
+    }
+  ]
+}

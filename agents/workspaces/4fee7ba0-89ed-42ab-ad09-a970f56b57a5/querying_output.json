@@ -1,0 +1,65 @@
+{
+  "field": "quantitative trading",
+  "performers": [
+    {
+      "name": "Jim Simons",
+      "strategy_urls": [
+        "https://www.quantvps.com/blog/jim-simons-trading-strategy",
+        "https://www.luxalgo.com/blog/simons-strategies-renaissance-trading-unpacked",
+        "https://trendspider.com/learning-center/whats-known-about-jim-simons-and-renaissance-technologies-strategies",
+        "https://d3.harvard.edu/platform-digit/submission/renaissance-technologies-generating-alpha-without-wall-street-veterans-or-mbas",
+        "https://hedgefundalpha.com/strategies/jim-simons-portfolio",
+        "https://www.youtube.com/watch?v=lji-jNsXmAM",
+        "https://trendspider.com/learning-center/renaissance-technologies"
+      ]
+    },
+    {
+      "name": "George Soros",
+      "strategy_urls": [
+        "https://www.youtube.com/watch?v=_MoPdNcQCeU",
+        "https://www.binance.com/en/square/post/1147980",
+        "https://quant.stackexchange.com/questions/908/george-soros-models",
+        "https://www.investopedia.com/articles/financial-theory/09/how-soros-does-it.asp",
+        "https://www.tradingview.com/chart/GBPUSD/yXo7ipV1-Master-Trader-Series-George-Soros-and-Reflexivity-in-Markets",
+        "https://www.scribd.com/presentation/366240603/George-Soros",
+        "https://minervamoneymanagement.co.uk/the-greatest-investment-strategy-quant-trading"
+      ]
+    },
+    {
+      "name": "Jesse Livermore",
+      "strategy_urls": [
+        "https://www.tradingview.com/script/6zoqtBtp-Jesse-Livermore-Strategy-Buy-Sell",
+        "http://www.r-5.org/files/books/trading/speculation/Richard_Smitten-Trade_Like_Jesse_Livermore-EN.pdf",
+        "https://enlightenedstocktrading.com/jesse-livermore",
+        "https://ftp.arcchurches.com/Download_PDFS/mL97B0/604650/How%20To%20Trade%20In%20Stocks%20Jesse%20Livermore.pdf",
+        "https://tradingcenter.org/index.php/learn/trading-tips/330-jesse-livermore",
+        "https://tradethatswing.com/swing-trading-lessons-from-how-to-trade-in-stocks-by-jesse-livermore",
+        "https://www.facebook.com/groups/chataboutxomstockandoptions/posts/1125139582144394"
+      ]
+    },
+    {
+      "name": "Stanley Druckenmiller",
+      "strategy_urls": [
+        "https://www.daytrading.com/stanley-druckenmiller",
+        "https://quantstrategy.io/blog/stanley-druckenmillers-macro-approach-the-art-of-aggressive",
+        "https://www.antoinebuteau.com/lessons-from-stanley-druckenmiller",
+        "https://www.linkedin.com/posts/stock-market-investment-systems_he-made-1b-in-a-single-trade-he-lost-3b-activity-7376091765214228481-sTS6",
+        "https://macro-ops.com/lessons-from-a-trading-great-stanley-druckenmiller",
+        "https://stockcircle.com/portfolio/stanley-druckenmiller",
+        "https://www.logikfx.com/post/how-to-trade-like-stanley-druckenmiller-mastering-the-art-of-trading-with-timeless-tips"
+      ]
+    },
+    {
+      "name": "Ray Dalio",
+      "strategy_urls": [
+        "https://hedgefundalpha.com/strategies/ray-dalio-portfolio",
+        "https://www.daytrading.com/ray-dalio",
+        "https://finance.yahoo.com/markets/stocks/articles/master-investor-ray-dalios-strategy-162500670.html",
+        "https://surmount.ai/blogs/investing-like-a-billionaire-secrets-of-ray-dalio-s-all-weather-strategy",
+        "https://statoasis.com/post/the-holy-grail-by-ray-dalio",
+        "https://pictureperfectportfolios.com/how-to-invest-like-ray-dalio-founder-of-bridgewater-associates",
+        "https://www.alliocapital.com/macrocalendar-weekly/the-macro-masterpiece"
+      ]
+    }
+  ]
+}

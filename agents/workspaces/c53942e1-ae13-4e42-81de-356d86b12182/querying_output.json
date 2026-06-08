@@ -1,0 +1,65 @@
+{
+  "field": "professional chess",
+  "performers": [
+    {
+      "name": "Anatoly Karpov",
+      "strategy_urls": [
+        "https://thechessworld.com/articles/general-information/5-top-chess-principles-according-to-anatoly-karpov",
+        "https://en.wikipedia.org/wiki/Anatoly_Karpov",
+        "https://www.chess.com/players/anatoly-karpov",
+        "https://www.youtube.com/watch?v=kqK0Akdle0M",
+        "https://thechessworld.com/articles/general-information/10-best-chess-games-by-anatoly-karpov",
+        "https://www.youtube.com/watch?v=96tNJt6ZM9k",
+        "https://www.chess.com/terms/chess-strategy"
+      ]
+    },
+    {
+      "name": "Garry Kasparov",
+      "strategy_urls": [
+        "https://www.masterclass.com/articles/8-chess-strategy-tips-from-garry-kasparovs-winning-chess-routine",
+        "https://www.chess.com/article/view/garry-kasparovs-finest-attacking-victories-part-i",
+        "https://www.thebusinessquotes.com/garry-kasparov-quotes",
+        "https://jamesclear.com/kasparov-confidence",
+        "https://www.amazon.com/Kasparovs-Winning-Tactics-Fireside-Library/dp/0671619853",
+        "https://www.youtube.com/watch?v=xYii_p8krds",
+        "https://www.reddit.com/r/boardgames/comments/7s6q2u/garry_kasparov_explains_his_greatest_chess_moves"
+      ]
+    },
+    {
+      "name": "Alexander Alekhine",
+      "strategy_urls": [
+        "https://thechessworld.com/articles/general-information/10-things-to-learn-from-alexander-alekhine",
+        "https://en.wikipedia.org/wiki/Alexander_Alekhine",
+        "https://www.chess.com/games/alexander-alekhine",
+        "https://www.365chess.com/chess-openings/Alekhines-Defense",
+        "https://thechessworld.com/articles/general-information/10-best-games-by-alexander-alekhine",
+        "https://www.youtube.com/watch?v=g5UP2azeneY",
+        "https://www.chessgames.com/perl/chesscollection?cid=1012578"
+      ]
+    },
+    {
+      "name": "Vladimir Kramnik",
+      "strategy_urls": [
+        "https://itsintheprice.wordpress.com/2014/10/25/chess-interview-kramnik-on-the-world-champions",
+        "https://en.chessbase.com/post/interview-with-vladimir-kramnik",
+        "https://www.chess.com/blog/Spektrowski/vladimir-kramnik-pre-candidates-interview",
+        "https://www.perpetualchesspod.com/new-blog/2021/8/3/episode-237-gm-vladimir-kramnik",
+        "https://saychess.substack.com/p/kramniks-cheating-gambit",
+        "https://en.wikipedia.org/wiki/Vladimir_Kramnik",
+        "https://podcasts.apple.com/us/podcast/kramnik-blocked-me-after-this-podcast-with-him/id1745521337?i=1000675865891"
+      ]
+    },
+    {
+      "name": "Jose Raul Capablanca",
+      "strategy_urls": [
+        "https://www.chessworld.net/capablanca.asp",
+        "https://www.youtube.com/watch?v=B2IKO2co2oE&vl=en",
+        "https://medium.com/@musson_fraser/what-can-we-learn-from-the-crystal-clear-chess-style-of-capablanca-6b778cc8cff5",
+        "https://thechessworld.com/articles/general-information/10-things-we-can-learn-from-jose-raul-capablanca",
+        "https://www.chess.com/terms/chess-strategy",
+        "https://www.chess.com/lessons/play-like-jose-raul-capablanca",
+        "https://play.google.com/store/apps/details?id=com.chessking.android.learn.capablanca&hl=en_US"
+      ]
+    }
+  ]
+}
