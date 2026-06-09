@@ -279,14 +279,18 @@ def _slug(text: str) -> str:
     return re.sub(r"[^\w\s-]", "", text).strip().replace(" ", "_")
 
 
-def _write_index(vault: Path, field_name: str, names: list[str]) -> None:
+def _write_index(ctx: JobContext, field_name: str, names: list[str]) -> None:
     links = "\n".join(f"- [[{n}/overview|{n}]]" for n in names)
-    (vault / "_index.md").write_text(
-        f"---\ntags: [MOC, top-performers, {field_name.replace(' ','-')}]\n---\n\n"
+    # (vault / "_index.md").write_text(
+    #     f"---\ntags: [MOC, top-performers, {field_name.replace(' ','-')}]\n---\n\n"
+    #     f"# Top Performers in {field_name.title()} — Map of Content\n\n"
+    #     f"## Performers\n{links}\n",
+    #     encoding="utf-8",
+    # )
+    ctx.write_vault_file("_index.md",     
+    f"---\ntags: [MOC, top-performers, {field_name.replace(' ','-')}]\n---\n\n"
         f"# Top Performers in {field_name.title()} — Map of Content\n\n"
-        f"## Performers\n{links}\n",
-        encoding="utf-8",
-    )
+        f"## Performers\n{links}\n")
 
 
 @dataclass
@@ -303,13 +307,14 @@ async def run_synthesizer(ctx: JobContext) -> None:
     Reads ctx.extracted_path, writes vault to ctx.vault_dir.
     All paths are job-scoped. Safe for concurrent execution.
     """
-    with open(ctx.extracted_path) as f:
-        data = json.load(f)
+    # with open(ctx.extracted_path) as f:
+    #     data = json.load(f)
+    data = json.loads(ctx.read_file(JobContext.EXTRACTED_FILE))
 
     field_name = data["field"]
     performers = data["performers"]
-    vault      = ctx.vault_dir
-    vault.mkdir(parents=True, exist_ok=True)
+    # vault      = ctx.vault_dir
+    # vault.mkdir(parents=True, exist_ok=True)
 
     await ctx.emit("info", f"Synthesizer started — {len(performers)} performers")
 
@@ -342,17 +347,20 @@ async def run_synthesizer(ctx: JobContext) -> None:
             all_notes.append(_PerformerNotes(name=name, overview=overview, tasks=tasks, sources=sources))
 
         # Write files under job-scoped vault dir
-        folder = vault / _slug(name)
-        folder.mkdir(parents=True, exist_ok=True)
+        # folder = vault / _slug(name)
+        # folder.mkdir(parents=True, exist_ok=True)
         for filename, content in [
             ("overview.md",         overview),
             ("actionable_tasks.md", tasks),
             ("sources.md",          sources),
         ]:
-            (folder / filename).write_text(content, encoding="utf-8")
+            # (folder / filename).write_text(content, encoding="utf-8")
+            relative = f"{_slug(name)}/{filename}" 
+            ctx.write_vault_file(relative, content)
 
         await ctx.emit("success", f"  {name} → 3 notes written")
 
-    _write_index(vault, field_name, [n.name for n in all_notes])
-    md_count = len(list(vault.rglob("*.md")))
-    await ctx.emit("success", f"Synthesizer complete — {md_count} notes in {vault}")
+    # _write_index(vault, field_name, [n.name for n in all_notes])
+    _write_index(ctx, field_name, [n.name for n in all_notes])
+    # md_count = len(list(vault.rglob("*.md")))
+    await ctx.emit("success", f"Synthesizer complete — notes in vault")

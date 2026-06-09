@@ -24,17 +24,17 @@ from enum import Enum
 from pathlib import Path
 from typing import AsyncGenerator
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from fastapi import BackgroundTasks, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
-load_dotenv()
+# load_dotenv()
 
 # ── Resolve pipeline root ──────────────────────────────────────────────────
 PIPELINE_ROOT = Path(__file__).resolve().parent.parent / "agents"
-sys.path.insert(0, str(PIPELINE_ROOT))
+# sys.path.insert(0, str(PIPELINE_ROOT))
 
 WORKSPACE_ROOT = PIPELINE_ROOT / "workspaces"
 WORKSPACE_ROOT.mkdir(exist_ok=True)
@@ -42,7 +42,7 @@ WORKSPACE_ROOT.mkdir(exist_ok=True)
 PHOENIX_URL    = "https://app.phoenix.arize.com/s/job_searches"
 TAVILY_API_KEY = os.environ["TAVILY_API_KEY"]
 
-from agents.job_context import make_context, JobContext  # noqa: E402
+from job_context import make_context, JobContext  # noqa: E402
 
 
 # ── Job registry ───────────────────────────────────────────────────────────
@@ -134,7 +134,8 @@ async def start_pipeline(req: RunRequest, background_tasks: BackgroundTasks):
         raise HTTPException(400, "field cannot be empty")
 
     job_id = str(uuid.uuid4())
-    ctx    = make_context(job_id, req.field.strip(), WORKSPACE_ROOT)
+    # ctx    = make_context(job_id, req.field.strip(), WORKSPACE_ROOT)
+    ctx = make_context(job_id, req.field.strip())    
 
     rec = JobRecord(
         id=job_id,
@@ -197,23 +198,42 @@ async def get_notes(job_id: str):
     if rec.status != JobStatus.COMPLETED:
         raise HTTPException(400, f"Job is {rec.status} — notes not ready yet")
 
-    vault = _contexts[job_id].vault_dir
-    if not vault.exists():
-        raise HTTPException(404, "Vault directory missing")
+    # vault = _contexts[job_id].vault_dir
+    # if not vault.exists():
+    #     raise HTTPException(404, "Vault directory missing")
+    ctx   = _contexts[job_id]
+    files = ctx.list_vault_files()
 
-    def _tree(path: Path) -> dict:
-        if path.is_file():
-            return {"name": path.name, "type": "file",
-                    "content": path.read_text(encoding="utf-8")}
-        return {
-            "name": path.name, "type": "dir",
-            "children": [
-                _tree(c) for c in sorted(path.iterdir())
-                if not c.name.startswith(".")
-            ],
-        }
+    # def _tree(path: Path) -> dict:
+    #     if path.is_file():
+    #         return {"name": path.name, "type": "file",
+    #                 "content": path.read_text(encoding="utf-8")}
+    #     return {
+    #         "name": path.name, "type": "dir",
+    #         "children": [
+    #             _tree(c) for c in sorted(path.iterdir())
+    #             if not c.name.startswith(".")
+    #         ],
+    #     }
 
-    return _tree(vault)
+    # return _tree(vault)
+    tree: dict = {"name": "vault", "type": "dir", "children": []}
+
+    for path in sorted(files):
+        parts   = path.split("/")
+        content = ctx.read_vault_file(path)
+        node    = tree
+
+        for i, part in enumerate(parts[:-1]):      # walk/create intermediate dirs
+            existing = next((c for c in node["children"] if c["name"] == part), None)
+            if not existing:
+                existing = {"name": part, "type": "dir", "children": []}
+                node["children"].append(existing)
+            node = existing
+
+        node["children"].append({"name": parts[-1], "type": "file", "content": content})
+
+    return tree
 
 
 @app.delete("/api/jobs/{job_id}", status_code=204)

@@ -69,8 +69,9 @@ async def run_extractor(ctx: JobContext, tavily_api_key: str) -> list[PerformerE
     Reads ctx.querying_path, extracts all URLs, writes to ctx.extracted_path.
     All paths are job-scoped; safe for concurrent execution.
     """
-    with open(ctx.querying_path) as f:
-        data = json.load(f)
+    # with open(ctx.querying_path) as f:
+    #     data = json.load(f)
+    data = json.loads(ctx.read_file(JobContext.QUERYING_FILE))
 
     performers = data["performers"]
     extractions: list[PerformerExtraction] = []
@@ -120,7 +121,30 @@ async def run_extractor(ctx: JobContext, tavily_api_key: str) -> list[PerformerE
         extractions.append(extraction)
 
     # Persist to job-scoped path
-    with open(ctx.extracted_path, "w") as f:
+    # with open(ctx.extracted_path, "w") as f:
+    #     json.dump(
+    #         {
+    #             "field": data["field"],
+    #             "performers": [
+    #                 {
+    #                     "name": e.name,
+    #                     "pages": [
+    #                         {
+    #                             "url":         pg.url,
+    #                             "raw_content": pg.raw_content,
+    #                             "failed":      pg.failed,
+    #                             "error":       pg.error,
+    #                         }
+    #                         for pg in e.pages
+    #                     ],
+    #                 }
+    #                 for e in extractions
+    #             ],
+    #         },
+    #         f,
+    #         indent=2,
+    #     )
+    ctx.write_file(JobContext.EXTRACTED_FILE,
         json.dump(
             {
                 "field": data["field"],
@@ -140,8 +164,8 @@ async def run_extractor(ctx: JobContext, tavily_api_key: str) -> list[PerformerE
                     for e in extractions
                 ],
             },
-            f,
             indent=2,
+        )
         )
 
     await ctx.emit("success", f"Extractor complete → {ctx.extracted_path}")

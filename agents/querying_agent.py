@@ -245,18 +245,27 @@ async def run_querying_agent(ctx: JobContext, tavily_api_key: str) -> QueryingOu
         output.performers.append(PerformerResult(name=name, strategy_urls=urls))
 
     # Persist to job-scoped path
-    with open(ctx.querying_path, "w") as f:
-        json.dump(
-            {
+    # with open(ctx.querying_path, "w") as f:
+    #     json.dump(
+    #         {
+    #             "field": output.field,
+    #             "performers": [
+    #                 {"name": p.name, "strategy_urls": p.strategy_urls}
+    #                 for p in output.performers
+    #             ],
+    #         },
+    #         f,
+    #         indent=2,
+    #     )
+
+    ctx.write_file(JobContext.QUERYING_FILE, json.dumps(  {
                 "field": output.field,
                 "performers": [
                     {"name": p.name, "strategy_urls": p.strategy_urls}
                     for p in output.performers
                 ],
-            },
-            f,
-            indent=2,
-        )
+            }, indent=2))
+
 
     await ctx.emit("success", f"Querying Agent complete → {ctx.querying_path}")
     return output
