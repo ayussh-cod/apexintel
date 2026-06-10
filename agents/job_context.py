@@ -56,7 +56,7 @@ class JobContext:
 
     job_id:          str
     field_name:      str
-    workspace:       Path            # job-scoped directory for all files
+    # workspace:       Path            # job-scoped directory for all files
     phoenix_project: str             # isolated Phoenix project name,
     _bucket:         storage.Bucket = field(init=False, repr=False)
 
@@ -72,10 +72,17 @@ class JobContext:
     # Append-only log buffer for replay on SSE reconnect
     log_buffer:      list[str] = field(default_factory=list)
 
+    import asyncio
+
+# Add this field inside the JobContext dataclass
+    gemini_semaphore: asyncio.Semaphore = field(
+        default_factory=lambda: asyncio.Semaphore(3)
+    )
+
     def __post_init__(self) -> None:
         client = storage.Client()
         self._bucket = client.bucket(GCS_BUCKET_NAME)
-        self.workspace.mkdir(parents=True, exist_ok=True)
+        # self.workspace.mkdir(parents=True, exist_ok=True)
         self.tracer = _tracer_provider.get_tracer(f"pipeline")
 
         self.session_service = InMemorySessionService()
@@ -99,6 +106,11 @@ class JobContext:
 
     QUERYING_FILE  = "querying_output.json"
     EXTRACTED_FILE = "extracted_content.json"
+
+    @property
+    def _prefix(self) -> str:
+        return f"jobs/{self.job_id}"
+
 
     def write_file(self, filename: str, content: str) -> None:
         blob = self._bucket.blob(f"{self._prefix}/{filename}")
@@ -138,10 +150,10 @@ class JobContext:
 
 def make_context(job_id: str, field_name: str) -> JobContext:
     """Factory — creates a fresh, fully isolated JobContext."""
-    workspace = workspace_root / job_id
+    # workspace = workspace_root / job_id
     return JobContext(
         job_id=job_id,
         field_name=field_name,
-        workspace=workspace,
+        # workspace=workspace,
         phoenix_project=f"apex-{job_id[:8]}",
     )

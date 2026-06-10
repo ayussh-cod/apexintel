@@ -267,5 +267,5 @@ async def run_querying_agent(ctx: JobContext, tavily_api_key: str) -> QueryingOu
             }, indent=2))
 
 
-    await ctx.emit("success", f"Querying Agent complete → {ctx.querying_path}")
+    await ctx.emit("success", f"Querying Agent complete →  {ctx.QUERYING_FILE}")
     return output

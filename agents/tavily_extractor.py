@@ -145,7 +145,7 @@ async def run_extractor(ctx: JobContext, tavily_api_key: str) -> list[PerformerE
     #         indent=2,
     #     )
     ctx.write_file(JobContext.EXTRACTED_FILE,
-        json.dump(
+        json.dumps(
             {
                 "field": data["field"],
                 "performers": [
@@ -168,5 +168,5 @@ async def run_extractor(ctx: JobContext, tavily_api_key: str) -> list[PerformerE
         )
         )
 
-    await ctx.emit("success", f"Extractor complete → {ctx.extracted_path}")
+    await ctx.emit("success", f"Extractor complete → {ctx.EXTRACTED_FILE}")
     return extractions

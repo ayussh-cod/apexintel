@@ -7,6 +7,10 @@ python-multipart>=0.0.9
 google-adk>=2.0.0
 google-genai>=1.0.0
 
+
+# Google Cloud
+google-cloud-storage
+
 # Tavily
 tavily-python>=0.3.0
 requests>=2.31.0
