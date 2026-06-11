@@ -21,6 +21,7 @@ from pathlib import Path
 from google.adk.agents import LlmAgent
 from google.adk.runners import Runner
 from google.genai.types import Content, Part
+from google.genai import types
 
 from job_context import (
     JobContext,
@@ -34,6 +35,14 @@ from job_context import (
 _overview_agent = LlmAgent(
     name="overview_agent",
     model=GEMINI_MODEL,
+    generate_content_config=types.GenerateContentConfig(
+        http_options=types.HttpOptions(
+            retry_options=types.HttpRetryOptions(
+                initial_delay=5,
+                attempts=6,
+            )
+        )
+    ),
     instruction="""
 You are an expert knowledge curator creating Obsidian Markdown notes.
 
@@ -70,6 +79,14 @@ Rules: Use [[wikilinks]]. No commentary outside structure. Second-person for act
 _tasks_agent = LlmAgent(
     name="tasks_agent",
     model=GEMINI_MODEL,
+    generate_content_config=types.GenerateContentConfig(
+        http_options=types.HttpOptions(
+            retry_options=types.HttpRetryOptions(
+                initial_delay=5,
+                attempts=6,
+            )
+        )
+    ),
     instruction="""
 You are an expert productivity coach creating Obsidian action-task notes.
 
@@ -108,6 +125,14 @@ Rules: Every task must start with `- [ ]`. Be concrete — never vague.
 _sources_agent = LlmAgent(
     name="sources_agent",
     model=GEMINI_MODEL,
+    generate_content_config=types.GenerateContentConfig(
+        http_options=types.HttpOptions(
+            retry_options=types.HttpRetryOptions(
+                initial_delay=5,
+                attempts=6,
+            )
+        )
+    ),
     instruction="""
 You are a research librarian creating an Obsidian sources note.
 
@@ -130,6 +155,14 @@ Rules: Include ALL URLs. Mark failed ones as "⚠ Extraction failed".
 _validator_agent = LlmAgent(
     name="validator_agent",
     model=GEMINI_MODEL,
+    generate_content_config=types.GenerateContentConfig(
+        http_options=types.HttpOptions(
+            retry_options=types.HttpRetryOptions(
+                initial_delay=5,
+                attempts=6,
+            )
+        )
+    ),
     instruction="""
 You are an Obsidian Markdown structure auditor.
 Score structural completeness on 0.0-1.0. Respond ONLY with valid JSON (no fences):
@@ -140,6 +173,14 @@ Score structural completeness on 0.0-1.0. Respond ONLY with valid JSON (no fence
 _repair_agent = LlmAgent(
     name="repair_agent",
     model=GEMINI_MODEL,
+    generate_content_config=types.GenerateContentConfig(
+        http_options=types.HttpOptions(
+            retry_options=types.HttpRetryOptions(
+                initial_delay=5,
+                attempts=6,
+            )
+        )
+    ),
     instruction="""
 You are an Obsidian Markdown repair specialist.
 Rewrite a structurally incomplete note so it fully complies with the required structure.

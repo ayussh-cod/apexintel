@@ -19,6 +19,7 @@ import requests
 from google.adk.agents import LlmAgent
 from google.adk.runners import Runner
 from google.genai.types import Content, Part
+from google.genai import types
 
 from job_context import (
     JobContext,
@@ -35,6 +36,14 @@ TAVILY_SEARCH_URL = "https://api.tavily.com/search"
 _query_generator = LlmAgent(
     name="query_generator",
     model=GEMINI_MODEL,
+    generate_content_config=types.GenerateContentConfig(
+        http_options=types.HttpOptions(
+            retry_options=types.HttpRetryOptions(
+                initial_delay=5,
+                attempts=6,
+            )
+        )
+    ),
     instruction=(
         "You are a search-query expert. Given a task description, generate a precise "
         "web-search query (≤12 words). Return ONLY the query string — no explanation, "
@@ -45,6 +54,14 @@ _query_generator = LlmAgent(
 _evaluator = LlmAgent(
     name="evaluator",
     model=GEMINI_MODEL,
+    generate_content_config=types.GenerateContentConfig(
+        http_options=types.HttpOptions(
+            retry_options=types.HttpRetryOptions(
+                initial_delay=5,
+                attempts=6,
+            )
+        )
+    ),
     instruction=(
         "You are a search-quality evaluator. Score the query result quality on 0.0-1.0:\n"
         "  1.0 = specific real names / URLs, highly relevant.\n"
@@ -57,6 +74,14 @@ _evaluator = LlmAgent(
 _names_extractor = LlmAgent(
     name="names_extractor",
     model=GEMINI_MODEL,
+    generate_content_config=types.GenerateContentConfig(
+        http_options=types.HttpOptions(
+            retry_options=types.HttpRetryOptions(
+                initial_delay=5,
+                attempts=6,
+            )
+        )
+    ),
     instruction=(
         f"Extract person names from search result text. "
         f"Return ONLY a JSON array of up to {MAX_NAMES} name strings. "
