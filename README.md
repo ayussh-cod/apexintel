@@ -51,11 +51,7 @@ cd apexintel
 
 ### 2 — Configure environment variables
 
-```bash
-cp .env.example .env
-```
-
-Edit `.env`:
+Create an `.env` in the apexintel folder: 
 
 ```env
 GOOGLE_GENAI_USE_VERTEXAI=TRUE
