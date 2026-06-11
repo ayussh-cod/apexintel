@@ -74,11 +74,6 @@ class JobContext:
 
     import asyncio
 
-# Add this field inside the JobContext dataclass
-    gemini_semaphore: asyncio.Semaphore = field(
-        default_factory=lambda: asyncio.Semaphore(3)
-    )
-
     def __post_init__(self) -> None:
         client = storage.Client()
         self._bucket = client.bucket(GCS_BUCKET_NAME)
@@ -155,5 +150,5 @@ def make_context(job_id: str, field_name: str) -> JobContext:
         job_id=job_id,
         field_name=field_name,
         # workspace=workspace,
-        phoenix_project=f"apex-{job_id[:8]}",
+        phoenix_project=f"apex-pipeline",
     )

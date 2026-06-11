@@ -37,12 +37,6 @@ export default function NotesViewer({ job, onBack }) {
             <button className="btn-copy" onClick={handleCopy}>
               {copied ? "✓ Copied!" : "Copy Markdown"}
             </button>
-            <a
-              className="btn-obsidian"
-              href={`obsidian://open?path=${encodeURIComponent(selected.name)}`}
-            >
-              Open in Obsidian ↗
-            </a>
           </div>
         )}
       </div>

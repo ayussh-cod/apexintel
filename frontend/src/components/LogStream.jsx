@@ -33,7 +33,9 @@ export default function LogStream({ job, onViewNotes, onBack }) {
 
   // SSE stream
   useEffect(() => {
-    const es = new EventSource(`/api/stream/${job.id}`);
+    const es = new EventSource(
+      `${import.meta.env.VITE_API_URL}/api/stream/${job.id}`,
+    );
     esRef.current = es;
 
     es.onmessage = (e) => {
@@ -44,7 +46,9 @@ export default function LogStream({ job, onViewNotes, onBack }) {
           return;
         }
         setLogs(prev => [...prev, parsed]);
-      } catch {}
+        console.log(parsed)
+      } catch {
+    console.error("Failed to parse SSE message:", e.data, err);}
     };
 
     es.onerror = () => es.close();
